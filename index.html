@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Task Manager</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%232563eb%7D.cls-2%7Bfill:%23ffffff%7D%3C/style%3E%3C/defs%3E%3Crect width='100' height='100' rx='20' fill='%23f8fafc'/%3E%3Crect x='20' y='20' width='60' height='60' rx='8' fill='%232563eb'/%3E%3Crect x='30' y='35' width='40' height='3' rx='1.5' fill='%23ffffff'/%3E%3Crect x='30' y='45' width='40' height='3' rx='1.5' fill='%23ffffff'/%3E%3Crect x='30' y='55' width='30' height='3' rx='1.5' fill='%23ffffff'/%3E%3Crect x='30' y='65' width='35' height='3' rx='1.5' fill='%23ffffff'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader" aria-hidden="true">
+        <div class="preloader-content">
+            <div class="preloader-logo"><i class="fas fa-clipboard-list"></i></div>
+            <div class="preloader-spinner" aria-label="Loading"></div>
+            <div class="preloader-text">Loading Task Manager...</div>
+        </div>
+    </div>
+
+    <div class="app-container">
+        <!-- Login/Signup Section -->
+        <div class="auth-section" id="auth-section">
+            <div class="auth-container">
+                <!-- Left Column - Hero Section -->
+                <div class="auth-left">
+                    <div class="auth-hero">
+                        <h1><i class="fas fa-clipboard-list"></i> Task Manager</h1>
+                        <p>Professional task management made simple</p>
+                        <div class="hero-features">
+                            <div class="hero-feature">
+                                <div class="hero-feature-icon"><i class="fas fa-bolt"></i></div>
+                                <div class="hero-feature-text">Lightning fast task creation</div>
+                            </div>
+                            <div class="hero-feature">
+                                <div class="hero-feature-icon"><i class="fas fa-chart-line"></i></div>
+                                <div class="hero-feature-text">Progress tracking & analytics</div>
+                            </div>
+                            <div class="hero-feature">
+                                <div class="hero-feature-icon"><i class="fas fa-tags"></i></div>
+                                <div class="hero-feature-text">Smart task organization</div>
+                            </div>
+                            <div class="hero-feature">
+                                <div class="hero-feature-icon"><i class="fas fa-mobile-alt"></i></div>
+                                <div class="hero-feature-text">Responsive design</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Login Form -->
+                <div class="auth-right">
+                    <div class="auth-card">
+                        <div class="auth-header">
+                            <h1 class="auth-title"><i class="fas fa-clipboard-list"></i> Task Manager</h1>
+                            <p class="auth-subtitle">Manage your tasks efficiently</p>
+                        </div>
+                        
+                        <div class="auth-tabs">
+                            <button class="auth-tab active" id="login-tab">Login</button>
+                            <button class="auth-tab" id="signup-tab">Sign Up</button>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form class="auth-form active" id="login-form">
+                            <div class="form-group">
+                                <label for="login-username">Username</label>
+                                <input type="text" id="login-username" placeholder="Enter your username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="login-pin">PIN</label>
+                                <input type="password" id="login-pin" placeholder="Enter your PIN" required maxlength="6">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Login</button>
+                        </form>
+
+                        <!-- Signup Form -->
+                        <form class="auth-form" id="signup-form">
+                            <div class="form-group">
+                                <label for="signup-username">Username</label>
+                                <input type="text" id="signup-username" placeholder="Choose a username" required minlength="3" maxlength="20">
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-pin">PIN</label>
+                                <input type="password" id="signup-pin" placeholder="Create a 4-6 digit PIN" required minlength="4" maxlength="6">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-pin">Confirm PIN</label>
+                                <input type="password" id="confirm-pin" placeholder="Confirm your PIN" required maxlength="6">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="dashboard-section" id="dashboard-section" style="display: none;">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="sidebar">
+                <div class="sidebar-header">
+                    <h1 class="sidebar-title"><i class="fas fa-clipboard-list"></i> Task Manager</h1>
+                    <p class="sidebar-subtitle">Professional Task Management</p>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <div class="nav-section">
+                        <div class="nav-section-title">Navigation</div>
+                        <div class="nav-item active" id="all-tasks-nav">
+                            <span class="nav-item-icon"><i class="fas fa-tasks"></i></span>
+                            All Tasks
+                        </div>
+                        <div class="nav-item" id="today-nav">
+                            <span class="nav-item-icon"><i class="fas fa-calendar-day"></i></span>
+                            Today
+                        </div>
+                    </div>
+
+                    <div class="nav-section">
+                        <div class="nav-section-title">My Groups</div>
+                        <div id="groups-container">
+                            <!-- Groups will be dynamically added here -->
+                        </div>
+                        <button class="add-group-btn" id="add-group-btn">
+                            <i class="fas fa-plus"></i> Add Group
+                        </button>
+                    </div>
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-profile-sidebar">
+                        <div class="user-info">
+                            <div class="user-name" id="sidebar-username">User</div>
+                            <div class="user-status">Online</div>
+                        </div>
+                        <button class="logout-btn-sidebar" id="logout-btn-sidebar">Logout</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+
+                <!-- Header Section -->
+                <header class="header">
+                    <div class="header-content">
+                        <div class="header-left">
+                            <h1 class="app-title"><i class="fas fa-clipboard-list"></i> Task Manager</h1>
+                            <div class="export-dropdown">
+                                <button class="export-btn" id="export-btn">
+                                    <i class="fas fa-download"></i> Export
+                                    <span><i class="fas fa-chevron-down"></i></span>
+                                </button>
+                                <div class="export-dropdown-content" id="export-dropdown">
+                                    <button class="export-option" id="print-option"><i class="fas fa-print"></i> Print To-Do List</button>
+                                    <button class="export-option" id="pdf-option"><i class="fas fa-file-pdf"></i> Save as PDF</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="progress-dashboard">
+                            <div class="progress-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" id="total-tasks">0</span>
+                                    <span class="stat-label">Total</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="completed-tasks">0</span>
+                                    <span class="stat-label">Completed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="pending-tasks">0</span>
+                                    <span class="stat-label">Pending</span>
+                                </div>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="progress-fill"></div>
+                                </div>
+                                <span class="progress-percentage" id="progress-percentage">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+            <!-- Task Creation Form -->
+            <section class="task-form-section">
+                <form class="task-form" id="task-form">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="task-title" 
+                            placeholder="Enter task title..." 
+                            required
+                            maxlength="100"
+                        >
+                    </div>
+                    <div class="form-group">
+                        <select id="task-priority" required>
+                            <option value="">Select Priority</option>
+                            <option value="High">High Priority</option>
+                            <option value="Medium">Medium Priority</option>
+                            <option value="Low">Low Priority</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select id="task-group">
+                            <option value="">Select Group</option>
+                            <!-- Groups will be dynamically populated -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" id="task-due-date">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </form>
+            </section>
+
+            <!-- Filter and Search Section -->
+            <section class="filter-section">
+                <div class="filter-controls">
+                    <div class="search-group">
+                        <input 
+                            type="text" 
+                            id="search-input" 
+                            placeholder="Search tasks..."
+                            class="search-input"
+                        >
+                    </div>
+                    <div class="filter-group">
+                        <select id="status-filter">
+                            <option value="all">All Tasks</option>
+                            <option value="active">Active</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="priority-filter">
+                            <option value="all">All Priorities</option>
+                            <option value="High">High Priority</option>
+                            <option value="Medium">Medium Priority</option>
+                            <option value="Low">Low Priority</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="sort-filter">
+                            <option value="created">Sort by Created</option>
+                            <option value="due-date-asc">Due Date (Ascending)</option>
+                            <option value="due-date-desc">Due Date (Descending)</option>
+                            <option value="priority">Priority</option>
+                            <option value="title">Title</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="task-list-section">
+                <div class="task-list-container">
+                    <div class="task-list" id="task-list">
+                        <!-- Tasks will be dynamically rendered here -->
+                    </div>
+                    <div class="empty-state" id="empty-state">
+                        <div class="empty-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Your work. Organized.</h3>
+                        <p>Start your productivity journey by creating your first task. Stay focused, stay organized, and achieve your goals one task at a time.</p>
+                        <button class="cta-button" id="empty-state-cta"><i class="fas fa-plus"></i> Create Your First Task</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-text">
+                Made by <strong>Dipanjan Basak</strong> @2025
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        // Emergency fallback to ensure preloader is hidden
+        setTimeout(function() {
+            var preloader = document.getElementById('preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            }
+            var authSection = document.getElementById('auth-section');
+            if (authSection) {
+                authSection.style.display = 'flex';
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
