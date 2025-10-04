@@ -136,13 +136,6 @@ Professional Task Manager/
 - **PDF:** Click Export → "Save as PDF"
 - **Professional formatting** includes all task details
 
-### ❓ **Help & Support**
-- **Help Section:** Click "Help" in the sidebar for:
-  - Contact information
-  - Getting started guide
-  - Usage tips and tricks
-  - Feature explanations
-
 ## 🎨 **Design Features**
 
 ### **Color Scheme**
