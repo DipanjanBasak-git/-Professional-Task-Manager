@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📋 Professional Task Manager
 
 A modern, professional task management web application built with vanilla HTML, CSS, and JavaScript (ES6 Classes). Features a clean, light-themed SaaS design inspired by Confluence/Atlassian aesthetics with vibrant blue accents.
@@ -233,3 +234,7 @@ This project is created for educational and portfolio purposes. Feel free to use
 ---
 
 *Built with ❤️ using modern web technologies and professional design principles.*
+=======
+# -Professional-Task-Manager
+A modern, professional task management web application built with vanilla HTML, CSS, and JavaScript (ES6 Classes). Features a clean, light-themed SaaS design inspired by Confluence/Atlassian aesthetics with vibrant blue accents.
+>>>>>>> a2e70c1fb6e566fb2ea0e6f78022caa1eec7f452
