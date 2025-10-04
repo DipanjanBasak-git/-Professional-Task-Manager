@@ -4,7 +4,7 @@ A modern, professional task management web application built with vanilla HTML, 
 
 ## 🚀 Live Demo
 
-The application is running locally at `http://localhost:8000`
+The application is Deployed at `https://professional-task-manager-iota.vercel.app/`
 
 ## ✨ Features
 
@@ -81,11 +81,7 @@ Professional Task Manager/
 
 1. **Clone or download** the project files
 2. **Navigate** to the project directory
-3. **Start the local server:**
-   ```bash
-   python -m http.server 8000
-   ```
-4. **Open your browser** and visit `http://localhost:8000`
+4. **Open your browser** and visit `https://professional-task-manager-iota.vercel.app/`
 
 ### First Time Setup
 
